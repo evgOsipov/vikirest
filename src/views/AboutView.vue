@@ -1,5 +1,5 @@
 <template>
-    <MainPage />
+  <MainPage />
     <!-- <div id="myModal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -26,12 +26,7 @@
             </form>
         </div>
     </div>
-
-    
-
-<div class="footer">
-    <p>&copy; 2024 Ресторан "VG". Все права защищены.</p>
-</div>  -->
+-->
 </template>
 
 <script lang="ts" setup>
