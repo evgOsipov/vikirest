@@ -1,31 +1,5 @@
 <template>
   <MainPage/>
-  <!-- <div id="myModal" class="modal">
-      <div class="modal-content">
-          <span class="close">&times;</span>
-          <h1>Зарезервировать</h1>
-          <form id="bookingForm">
-              <label for="date">Дата:</label>
-              <input type="date" id="date" name="date" required><br>
-
-              <label for="time">Время:</label>
-              <input type="time" id="time" name="time" required><br>
-
-              <label for="preferences">Пожелания и номер телефона:</label>
-              <textarea id="preferences" name="preferences" rows="4" cols="50"></textarea><br>
-
-              <label for="location">Расположение стола:</label>
-              <select id="location" name="location">
-
-              <option value="window">У окна</option>
-              <option value="quiet">Спокойное место</option>
-              <option value="bar">У барной стойки</option>
-              </select><br>
-
-              <button type="submit">Отправить</button>
-          </form>
-      </div>
-  </div> -->
 </template>
 
 <script lang="ts" setup>

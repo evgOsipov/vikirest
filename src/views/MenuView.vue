@@ -32,24 +32,6 @@
         </v-card>
       </v-carousel-item>
     </v-carousel>
-<!--    <v-card class="d-flex flex-wrap ga-3" width="100%" color="transparent">-->
-<!--      <v-card-->
-<!--        v-for="dish in dishes"-->
-<!--        :key="dish.id"-->
-<!--        width="300"-->
-<!--        color="transparent"-->
-<!--      >-->
-<!--        <v-card-item>-->
-<!--          <v-img :src="dish.img" width="300" height="300"></v-img>-->
-<!--        </v-card-item>-->
-<!--        <v-card-title :style="textStyleRed" class="text-body-1">-->
-<!--          {{ dish.title }}-->
-<!--        </v-card-title>-->
-<!--        <v-card-subtitle :style="textStyleRed" class="text-subtitle-2">-->
-<!--          {{ dish.subtitle }}-->
-<!--        </v-card-subtitle>-->
-<!--      </v-card>-->
-<!--    </v-card>-->
   </v-container>
 </template>
 
