@@ -1,11 +1,11 @@
 <template>
-    <v-app class="flex-column">
-        <PageHeader  class="flex-0-0"/> 
-        <v-container class="flex-1-1">
-            <router-view />
-        </v-container>
-        <PageFooter class="flex-0-0" />
-    </v-app>
+  <v-app class="flex-column" style="background: #dcc7b5;">
+    <PageHeader class="flex-0-0"/>
+    <v-main>
+      <RouterView/>
+    </v-main>
+    <PageFooter class="flex-0-0"/>
+  </v-app>
 </template>
 
 <script lang="ts" setup>

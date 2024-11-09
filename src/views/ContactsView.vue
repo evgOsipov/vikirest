@@ -1,98 +1,51 @@
 <template>
-    <MainPage />
-    <!-- <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h1>Зарезервировать</h1>
-            <form id="bookingForm">
-                <label for="date">Дата:</label>
-                <input type="date" id="date" name="date" required><br>
-                
-                <label for="time">Время:</label>
-                <input type="time" id="time" name="time" required><br>
-                
-                <label for="preferences">Пожелания и номер телефона:</label>
-                <textarea id="preferences" name="preferences" rows="4" cols="50"></textarea><br>
-                
-                <label for="location">Расположение стола:</label>
-                <select id="location" name="location">
-                
-                <option value="window">У окна</option>
-                <option value="quiet">Спокойное место</option>
-                <option value="bar">У барной стойки</option>
-                </select><br>
-                
-                <button type="submit">Отправить</button>
-            </form>
-        </div>
-    </div>
-
-    
-
-<div class="footer">
-    <p>&copy; 2024 Ресторан "VG". Все права защищены.</p>
-</div>  -->
+  <v-container class="pa-0" fluid>
+    <v-row no-gutters>
+      <v-col class="pa-0">
+        <v-parallax :src="ContactsImg" height="450" width="100%" scale="1" class="align-end">
+        </v-parallax>
+      </v-col>
+    </v-row>
+    <v-container max-width="1000" class="d-flex flex-column pt-4 ga-7">
+      <v-row class="justify-center" no-gutters>
+        <v-col class="text-center">
+          <h3 :style="textStyleRed" class="text-h4">Контакты</h3>
+        </v-col>
+      </v-row>
+      <v-row class="align-center justify-center" no-gutters>
+        <v-col :style="textStyleRed" class="text-center">
+          <p class="mb-2 text-body-1">Москва, улица Свободы, дом 40</p>
+          <p class="mb-2 text-body-1">+7 499 456 7890</p>
+          <p class="mb-2 text-body-1">Электронная почта: vg@restaurant.com</p>
+          <p class="mb-2 text-body-1">СМИ: pr@vg.com</p>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-row no-gutters>
+      <v-col class="pa-0">
+        <div id="map" style="width: 100%; height: 400px"></div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
-import MainPage from '@/components/main-page/MainPage.vue';
+import { onMounted } from 'vue';
 
-document.addEventListener("DOMContentLoaded", function() {
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const reviewsContainer = document.querySelector(".reviews-container");
-  const reviews = document.querySelectorAll(".review");
-  const reviewWidth = reviews[0].offsetWidth;
+import ContactsImg from '@/assets/img/высота.jpg';
+import { useMap } from '@/stores/useMap.ts';
 
-  let currentIndex = 0;
+const { initMap } = useMap();
 
-  // Функция для перемещения карусели влево
-  function slideLeft() {
-    if (currentIndex > 0) {
-      currentIndex--;
-      const newPosition = -currentIndex * reviewWidth;
-      reviewsContainer.style.transform = `translateX(${newPosition}px)`;
-    }
-  }
+const textStyleRed = {
+  color: '#2b070b',
+};
 
-  // Функция для перемещения карусели вправо
-  function slideRight() {
-    if (currentIndex < reviews.length - 1) {
-      currentIndex++;
-      const newPosition = -currentIndex * reviewWidth;
-      reviewsContainer.style.transform = `translateX(${newPosition}px)`;
-    }
-  }
-
-  // Обработчики событий для кнопок "Предыдущий" и "Следующий"
-  prevBtn.addEventListener("click", slideLeft);
-  nextBtn.addEventListener("click", slideRight);
-});
-
-
-
-
-// Получение ссылок на элементы
-var modal = document.getElementById("myModal");
-var btn = document.getElementById("openModalBtn");
-var span = document.getElementsByClassName("close")[0];
-
-// Открытие модального окна при клике на кнопку
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// Закрытие модального окна при клике на крестик
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// Закрытие модального окна при клике вне его
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+onMounted(() => {
+  ymaps.ready(async () => {
+    await initMap();
+  });
+})
 </script>
 
 <style lang="css" scoped>

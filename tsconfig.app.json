@@ -26,5 +26,5 @@
       ]
     }
   },
-  "include": ["../qr/src/**/*.ts", "../qr/src/**/*.tsx", "../qr/src/**/*.vue"],
+  "include": ["../vikirest/src/**/*.ts", "../vikirest/src/**/*.tsx", "../vikirest/src/**/*.vue"],
 }

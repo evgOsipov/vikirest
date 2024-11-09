@@ -1,63 +1,69 @@
 <template>
-    <v-container>
-        <v-row>
-            <v-col>
-                <v-img :src="MainImg"></v-img>
-            </v-col>
-        </v-row>
+  <v-container class="pa-0" fluid>
+    <v-row no-gutters>
+      <v-col class="pa-0">
+        <v-parallax :src="MainImg" height="850" width="100%" scale="1" class="align-end">
+          <v-card color="transparent border-none" max-width="500">
+            <v-card-title>
+              <h1>Ресторан VG</h1>
+            </v-card-title>
+            <v-card-text>
+              Приглашаем вас на захватывающий гастрономический ужин, где изысканные блюда и избранные вина сочетаются в идеальной гармонии, доставляя незабываемые впечатления и удовольствие.
+            </v-card-text>
+          </v-card>
+        </v-parallax>
+      </v-col>
+    </v-row>
+    <v-container max-width="1000" class="d-flex flex-column pt-4 ga-7">
+      <v-row class="justify-center" no-gutters>
+        <v-col class="text-center">
+          <h3 :style="textStyleRed" class="text-h3">О нас</h3>
+        </v-col>
+      </v-row>
+      <v-row class="align-center justify-center" no-gutters>
+        <v-col :style="textStyleRed">
+          <p class="pb-4">Наше меню предлагает уникальные гастрономические изыски, вдохновленные мировыми кулинарными традициями. Вино нашей тщательно подобранной карты подчеркнет вкус каждого блюда. </p>
+          <p class="pb-4">Ощутите искусство в каждом приеме и окунитесь в мир неповторимых вкусов в "VG".</p>
+        </v-col>
+        <v-col>
+          <v-img :src="AuthorPhoto" width="400">
+          </v-img>
+        </v-col>
+      </v-row>
+      <v-row class="align-center justify-center" no-gutters>
+        <v-col>
+          <v-img :src="RestaurantMain" width="400">
+          </v-img>
+        </v-col>
+        <v-col :style="textStyleRed">
+          <p class="pb-4">Добро пожаловать в "VG" - ресторан, где встречаются высокая кухня и роскошное вино. Здесь вы откроете для себя уникальное сочетание гастрономических изысков и непревзойденного внимания к каждому гостю.</p>
+          <p class="pb-4">Наша команда профессиональных поваров создает блюда, вдохновленные лучшими мировыми кулинарными традициями, чтобы каждый прием стал для вас незабываемым кулинарным путешествием.</p>
+          <p class="pb-4">Виктория - основатель гастрономического ресторана "VG" с роскошным вином.</p>
+        </v-col>
+      </v-row>
     </v-container>
-   <!-- <main>
-    <section class="foto">
-        
-        <img class="main__foto" src="img/фото1.png" alt="основа">
-        <div class="main-block">
-            <h1 class="main-title">Ресторан VG</h1>
-            <p class="main-text">
-                Приглашаем вас на захватывающий гастрономический ужин, где изысканные блюда и избранные вина сочетаются в идеальной гармонии, доставляя незабываемые впечатления и удовольствие.        
-            </p>
-        </div>
-        
-    </section>
-    <section>
-        <h1 class="nachal">О НАС</h1>
-        
-        <div class="image-containe">
-            <img class="image" src="img/вика.jpg" alt="О нас">
-            <div class="text-container">
-                <p class="text1">Добро пожаловать в "VG" - ресторан, где встречаются высокая кухня и роскошное вино. Здесь вы откроете для себя уникальное сочетание гастрономических изысков и непревзойденного внимания к каждому гостю.</p>
-                <p class="text2"> Наша команда профессиональных поваров создает блюда, вдохновленные лучшими мировыми кулинарными традициями, чтобы каждый прием стал для вас незабываемым кулинарным путешествием.</p>
-                <p class="text3">Виктория - основатель гастрономического ресторана "VG" с роскошным вином.</p>
-            </div>
-        </div>
-    
-        <div class="image-container2">
-            <div class="text-containe">
-                <p class="text4">Наше меню предлагает уникальные гастрономические изыски, вдохновленные мировыми кулинарными традициями. Вино нашей тщательно подобранной карты подчеркнет вкус каждого блюда. </p>
-                <p class="text5">Ощутите искусство в каждом приеме и окунитесь в мир неповторимых вкусов в "VG".</p>
-            </div>
-            <img class="image1" src="img/ресст.webp " alt="О нас">
-        </div>
-    </section>        
-
-    <section>
-        <div class="image-container1">
-            <img src="img/м-еда.png" alt="фото меню">
-            <div class="text-menu">
-                <p>вы не забудете это никогда</p>
-                <h1>НАШЕ МЕНЮ</h1>
-            </div>  
-        </div>
-    </section>
-    <section class="menubar">
-        <h1 class="m1"><a href="menu.html">Меню</a></h1>
-    </section>
-</main> -->
+    <v-row no-gutters>
+      <v-col class="pa-0">
+        <v-parallax :src="FoodImg" height="450" width="100%" scale="1" class="align-center text-center">
+          <p class="text-h6">Вы не забудете это никогда</p>
+          <v-btn class="text-h6" variant="text" :ripple="false" to="/menu">НАШЕ МЕНЮ</v-btn>
+        </v-parallax>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script lang="ts" setup>
-import MainImg from '@/assets/img/фото1.png';
+import MainImg from '@/assets/img/main-cover.png';
+import FoodImg from '@/assets/img/food-main.png';
+import AuthorPhoto from '@/assets/img/author-photo.jpg';
+import RestaurantMain from '@/assets/img/rest-main.webp';
+
+const textStyleRed = {
+  color: '#2b070b',
+};
 </script>
 
 <style lang="css">
-    
+
 </style>
