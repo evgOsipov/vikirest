@@ -51,6 +51,7 @@
         <v-toolbar-title>
           Оставить заявку на бронирование
         </v-toolbar-title>
+        <v-icon class="mr-2" @click="reserve = false">mdi-close</v-icon>
       </v-toolbar>
       <v-card width="1000" color="transparent" rounded="0">
         <v-card-item>
@@ -63,13 +64,14 @@
             <v-text-field :style="textStyleRed" class="text-h5" base-color="#2b070b" type="time">
 
             </v-text-field>
-            <v-label>Введите время</v-label>
-            <v-text-field :style="textStyleRed" class="text-h5" base-color="#2b070b" type="date">
+            <v-label>Напишите Ваши пожелания</v-label>
+            <v-textarea :style="textStyleRed" class="text-h5" base-color="#2b070b" type="date" no-resize>
 
-            </v-text-field>
-            <v-text-field :style="textStyleRed" class="text-h5" base-color="#2b070b" type="date">
-
-            </v-text-field>
+            </v-textarea>
+            <v-label>Расположение стола</v-label>
+            <v-select :items="['У окна', 'Спокойное место', 'У барной стойки']" :style="textStyleRed" class="text-h5" base-color="#2b070b" no-data-text="Нет выбора">
+            </v-select>
+            <v-btn base-color="#2b070b" block>Отправить</v-btn>
           </v-form>
         </v-card-item>
       </v-card>
